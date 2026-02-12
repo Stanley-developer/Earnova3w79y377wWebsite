@@ -10,3 +10,7 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
     zip_ref.extractall(extract_path)
 
 print("Extraction complete!")
+print("Listing extracted files...")
+for root, dirs, files in os.walk(extract_path):
+    for file in files:
+        print(os.path.join(root, file)[:100])
